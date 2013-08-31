@@ -1,45 +1,39 @@
-<h1>Listing employees</h1>
+<h1>Lista de empleados</h1>
 
-<table>
-  <tr>
-    <th>Job</th>
-    <th>First name</th>
-    <th>Last name</th>
-    <th>Gender</th>
-    <th>Country</th>
-    <th>Document type</th>
-    <th>Document</th>
-    <th>Nit</th>
-    <th>Email</th>
-    <th>Password</th>
-    <th>Address</th>
-    <th>State</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<table class="table table-hover">
+  <thead>  
+    <tr>    
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Genero</th>
+      <th>NIT</th>
+      <th>Cargo</th>
+      <th>Correo</th>
+      <th>Estado</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
 
 <% @employees.each do |employee| %>
-  <tr>
-    <td><%= employee.job %></td>
-    <td><%= employee.first_name %></td>
-    <td><%= employee.last_name %></td>
-    <td><%= employee.gender %></td>
-    <td><%= employee.country %></td>
-    <td><%= employee.document_type %></td>
-    <td><%= employee.document %></td>
-    <td><%= employee.nit %></td>
-    <td><%= employee.email %></td>
-    <td><%= employee.password %></td>
-    <td><%= employee.address %></td>
-    <td><%= employee.state %></td>
-    <td><%= link_to 'Show', employee %></td>
-    <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
-    <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <tbody>
+    <tr>    
+      <td><%= employee.first_name %></td>
+      <td><%= employee.last_name %></td>
+      <td><%= employee.gender == true ? "Hombre" : "Mujer" %></td>
+      <td><%= employee.nit %></td>
+      <td><%= employee.job.name %></td>
+      <td><%= employee.email %></td>
+      <td><%= employee.state == true ? "Activo" : "Bloqueado" %></td>
+      <td><%= link_to 'Ver', employee %></td>
+      <td><%= link_to 'Editar', edit_employee_path(employee) %></td>
+      <td><%= link_to 'Eliminar', employee, method: :delete, data: { confirm: '¿Esta seguro?' } %></td>
+    </tr>
+  </tbody>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Employee', new_employee_path %>
+<%= link_to 'Nuevo empleado', new_employee_path, class: "btn btn-primary" %>

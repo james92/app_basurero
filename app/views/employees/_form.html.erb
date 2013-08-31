@@ -11,55 +11,58 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :job %><br />
-    <%= f.text_field :job %>
+  
+  <div class="control-group">
+    <%= f.label "Nombre" %>
+    <%= f.text_field :first_name, class: "input-xlarge" %>
   </div>
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
+  <div class="control-group">
+    <%= f.label "Apellido" %>
+    <%= f.text_field :last_name, class: "input-xlarge" %>
   </div>
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
+  <div class="control-group">
+    <%= f.label "Genero" %>
+    <%= f.radio_button :gender, true, checked: true %>Hombre
+    <%= f.radio_button :gender, false %>Mujer
   </div>
-  <div class="field">
-    <%= f.label :gender %><br />
-    <%= f.check_box :gender %>
+  <div class="control-group">
+    <%= f.label "Pais" %>
+    <%= f.select :country_id, Country.all.map { |country| [country.name, country.id] } %>
   </div>
-  <div class="field">
-    <%= f.label :country %><br />
-    <%= f.text_field :country %>
+  <div class="control-group">
+    <%= f.label "Cargo" %>
+    <%= f.select :job_id, Job.all.map { |job| [job.name, job.id] } %>
   </div>
-  <div class="field">
-    <%= f.label :document_type %><br />
-    <%= f.text_field :document_type %>
+  <div class="control-group">
+    <%= f.label "Tipo de documento" %>
+    <%= f.text_field :document_type, class: "input-xlarge" %>
   </div>
-  <div class="field">
-    <%= f.label :document %><br />
-    <%= f.text_field :document %>
+  <div class="control-group">
+    <%= f.label "Documento" %>
+    <%= f.text_field :document, class: "input-xlarge" %>
   </div>
-  <div class="field">
-    <%= f.label :nit %><br />
-    <%= f.text_field :nit %>
+  <div class="control-group">
+    <%= f.label "NIT" %>
+    <%= f.text_field :nit, class: "input-xlarge" %>
   </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
+  <div class="control-group">
+    <%= f.label "Correo" %>
+    <%= f.text_field :email, class: "input-xlarge" %>
   </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.text_field :password %>
+  <div class="control-group">
+    <%= f.label :password, class: "input-xlarge" %>
+    <%= f.password_field :password %>
   </div>
-  <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_area :address %>
+  <div class="control-group">
+    <%= f.label "Direccion" %>
+    <%= f.text_area :address, class: "input-xxlarge", rows: "5" %>
   </div>
-  <div class="field">
-    <%= f.label :state %><br />
-    <%= f.check_box :state %>
+  <div class="control-group">
+    <%= f.label "Estado", class: "checkbox" do %>
+    <%= f.check_box :state %> Activo
+    <% end %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="control-group">
+    <%= f.button "Guardar", type: "submit", class: "btn btn-primary" %>
   </div>
 <% end %>

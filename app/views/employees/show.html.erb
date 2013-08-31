@@ -1,65 +1,62 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Job:</b>
-  <%= @employee.job %>
-</p>
 
 <p>
-  <b>First name:</b>
+  <b>Nombre:</b>
   <%= @employee.first_name %>
 </p>
 
 <p>
-  <b>Last name:</b>
+  <b>Apellido:</b>
   <%= @employee.last_name %>
 </p>
 
 <p>
-  <b>Gender:</b>
-  <%= @employee.gender %>
+  <b>Genero:</b>
+  <%= @employee.gender == true ? "Hombre" : "Mujer" %>
 </p>
 
 <p>
-  <b>Country:</b>
-  <%= @employee.country %>
+  <b>Pais:</b>
+  <%= @employee.country.name %>
 </p>
 
 <p>
-  <b>Document type:</b>
+  <b>Cargo:</b>
+  <%= @employee.job.name %>
+</p>
+
+
+<p>
+  <b>Tipo de documento:</b>
   <%= @employee.document_type %>
 </p>
 
 <p>
-  <b>Document:</b>
+  <b>Documento:</b>
   <%= @employee.document %>
 </p>
 
 <p>
-  <b>Nit:</b>
+  <b>NIT:</b>
   <%= @employee.nit %>
 </p>
 
 <p>
-  <b>Email:</b>
+  <b>Correo:</b>
   <%= @employee.email %>
 </p>
 
 <p>
-  <b>Password:</b>
-  <%= @employee.password %>
-</p>
-
-<p>
-  <b>Address:</b>
+  <b>Direcci&oacute;n:</b>
   <%= @employee.address %>
 </p>
 
 <p>
-  <b>State:</b>
-  <%= @employee.state %>
+  <b>Estado:</b>
+  <%= @employee.state == true ? "Activo" : "Bloqueado" %>
 </p>
 
 
-<%= link_to 'Edit', edit_employee_path(@employee) %> |
-<%= link_to 'Back', employees_path %>
+<%= link_to 'Editar', edit_employee_path(@employee), class: "btn btn-primary" %> |
+<%= link_to 'Atras', employees_path, class: "btn btn-primary" %>

@@ -12,7 +12,7 @@ class CreateEmployees < ActiveRecord::Migration
       t.string :email
       t.string :password
       t.text :address
-      t.boolean :state
+      t.boolean :state, default: true
 
       t.timestamps
     end

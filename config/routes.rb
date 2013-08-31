@@ -1,4 +1,7 @@
 AppBasurero::Application.routes.draw do
+  resources :roles
+
+
   resources :employees
 
 
