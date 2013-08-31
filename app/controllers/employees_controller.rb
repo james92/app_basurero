@@ -14,7 +14,7 @@ class EmployeesController < ApplicationController
   # GET /employees/1.json
   def show
     @employee = Employee.find(params[:id])
-
+   # 
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @employee }
@@ -25,7 +25,7 @@ class EmployeesController < ApplicationController
   # GET /employees/new.json
   def new
     @employee = Employee.new
-
+    @employee.build_user
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @employee }
@@ -33,8 +33,9 @@ class EmployeesController < ApplicationController
   end
 
   # GET /employees/1/edit
-  def edit
+  def edit    
     @employee = Employee.find(params[:id])
+    @employee.build_user if @employee.user.blank?
   end
 
   # POST /employees

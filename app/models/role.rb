@@ -1,3 +1,3 @@
 class Role < ActiveRecord::Base
-  attr_accessible :description, :name
+  attr_accessible :description, :name, :role_id
 end

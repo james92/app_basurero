@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  employee: 
+  role: 
+  username: MyString
+  password: MyString
+  state: false
+
+two:
+  employee: 
+  role: 
+  username: MyString
+  password: MyString
+  state: false

@@ -30,6 +30,7 @@
               <li><%= link_to "Roles", roles_path %></li>
             </ul>
           </li>
+          <li class="<%= 'active' if controller.controller_name == 'tables' %>"><%= link_to "Mesas", tables_path %></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>

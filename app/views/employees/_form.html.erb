@@ -50,18 +50,42 @@
     <%= f.text_field :email, class: "input-xlarge" %>
   </div>
   <div class="control-group">
-    <%= f.label :password, class: "input-xlarge" %>
-    <%= f.password_field :password %>
-  </div>
-  <div class="control-group">
     <%= f.label "Direccion" %>
     <%= f.text_area :address, class: "input-xxlarge", rows: "5" %>
   </div>
   <div class="control-group">
     <%= f.label "Estado", class: "checkbox" do %>
-    <%= f.check_box :state %> Activo
+    <%= f.check_box :state %> Empleado activo
     <% end %>
   </div>
+
+  <%= f.fields_for :user do |builder| %>
+    <div class="row">
+      <div class="span1"></div>
+      <div class="span10">
+        <div class="control-group">
+          <%= builder.label :username %>
+          <%= builder.text_field :username %>
+        </div>
+        <div class="control-group">
+          <%= builder.label :password %>
+          <%= builder.password_field :password %>
+        </div>
+        <div class="control-group">
+          <%= builder.label "Rol" %>
+          <%= builder.select :role_id, Role.all.map { |role| [role.name, role.id] } %>
+        </div>
+        <div class="control-group">
+          <%= builder.label "Estado", class: "checkbox" do %>
+          <%= builder.check_box :state %> Cuenta de usuario activa
+          <% end %>
+        </div>
+      </div>
+      <div class="span1"></div>
+    </div>
+    
+  <% end %>
+
   <div class="control-group">
     <%= f.button "Guardar", type: "submit", class: "btn btn-primary" %>
   </div>

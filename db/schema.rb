@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130831175112) do
+ActiveRecord::Schema.define(:version => 20130831193126) do
 
   create_table "brands", :force => true do |t|
     t.string   "name"
@@ -43,7 +43,6 @@ ActiveRecord::Schema.define(:version => 20130831175112) do
     t.string   "document"
     t.string   "nit"
     t.string   "email"
-    t.string   "password"
     t.text     "address"
     t.boolean  "state",         :default => true
     t.datetime "created_at",                      :null => false
@@ -83,5 +82,26 @@ ActiveRecord::Schema.define(:version => 20130831175112) do
   end
 
   add_index "subcategories", ["category_id"], :name => "index_subcategories_on_category_id"
+
+  create_table "tables", :force => true do |t|
+    t.string   "identifier"
+    t.text     "location"
+    t.boolean  "state",      :default => true
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.integer  "employee_id"
+    t.integer  "role_id"
+    t.string   "username"
+    t.string   "password"
+    t.boolean  "state",       :default => true
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  add_index "users", ["employee_id"], :name => "index_users_on_employee_id"
+  add_index "users", ["role_id"], :name => "index_users_on_role_id"
 
 end

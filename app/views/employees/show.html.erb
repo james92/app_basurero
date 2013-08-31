@@ -47,6 +47,13 @@
   <%= @employee.email %>
 </p>
 
+<% unless @employee.user.blank? %>
+<p>
+  <b>Usuario:</b>
+  <%= @employee.user.username %>
+</p>
+<% end %>
+
 <p>
   <b>Direcci&oacute;n:</b>
   <%= @employee.address %>
