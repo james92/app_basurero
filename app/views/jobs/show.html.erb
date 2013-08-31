@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @job.name %>
+</p>
+
+<p>
+  <b>Descripci&oacute;n:</b>
+  <%= @job.description %>
+</p>
+
+
+<%= link_to 'Editar', edit_job_path(@job), class: "btn btn-primary" %> |
+<%= link_to 'Atras', jobs_path, class: "btn btn-primary" %>

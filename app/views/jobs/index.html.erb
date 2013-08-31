@@ -1,0 +1,29 @@
+<h1>Listado de cargos</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripci&oacute;n</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+<% @jobs.each do |job| %>
+  <tbody>
+    <tr>
+      <td><%= job.name %></td>
+      <td><%= job.description %></td>
+      <td><%= link_to 'Ver', job %></td>
+      <td><%= link_to 'Editar', edit_job_path(job) %></td>
+      <td><%= link_to 'Eliminar', job, method: :delete, data: { confirm: '¿Esta seguro?' } %></td>
+    </tr>
+  </tbody>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nueva cargo', new_job_path, class: "btn btn-primary" %>

@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+if Country.all.blank?
+	Country.create!([{name: "El Salvador"},{name: "Guatemala"},{name: "Costa Rica"}, {name: "Honduras"},{name: "Panama"},{name: "Nicaragua"},{name: "Mexico"}])
+end

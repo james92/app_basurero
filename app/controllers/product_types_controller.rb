@@ -44,7 +44,7 @@ class ProductTypesController < ApplicationController
 
     respond_to do |format|
       if @product_type.save
-        format.html { redirect_to @product_type, notice: 'Product type was successfully created.' }
+        format.html { redirect_to @product_type, notice: 'El tipo de producto fue creado.' }
         format.json { render json: @product_type, status: :created, location: @product_type }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class ProductTypesController < ApplicationController
 
     respond_to do |format|
       if @product_type.update_attributes(params[:product_type])
-        format.html { redirect_to @product_type, notice: 'Product type was successfully updated.' }
+        format.html { redirect_to @product_type, notice: 'El tipo de producto fue actualizado.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

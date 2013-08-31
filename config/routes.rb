@@ -1,4 +1,10 @@
 AppBasurero::Application.routes.draw do
+  resources :employees
+
+
+  resources :jobs
+
+
   resources :product_types
 
 
