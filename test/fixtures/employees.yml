@@ -12,7 +12,7 @@ one:
   email: MyString
   password: MyString
   address: MyText
-  state: 
+  state: false
 
 two:
   job: 
@@ -26,4 +26,4 @@ two:
   email: MyString
   password: MyString
   address: MyText
-  state: 
+  state: false
