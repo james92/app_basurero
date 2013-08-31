@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>Nombre:</b>
   <%= @role.name %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b>Descripci&oacute;n:</b>
   <%= @role.description %>
 </p>
 
 
-<%= link_to 'Edit', edit_role_path(@role) %> |
-<%= link_to 'Back', roles_path %>
+<%= link_to 'Editar', edit_role_path(@role), class: "btn btn-primary" %> |
+<%= link_to 'Atras', roles_path, class: "btn btn-primary" %>

@@ -1,25 +1,29 @@
-<h1>Listing roles</h1>
+<h1>Lista de roles</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripci&oacute;n</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
 
 <% @roles.each do |role| %>
-  <tr>
-    <td><%= role.name %></td>
-    <td><%= role.description %></td>
-    <td><%= link_to 'Show', role %></td>
-    <td><%= link_to 'Edit', edit_role_path(role) %></td>
-    <td><%= link_to 'Destroy', role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <tbody>
+    <tr>
+      <td><%= role.name %></td>
+      <td><%= role.description %></td>
+      <td><%= link_to 'Ver', role %></td>
+      <td><%= link_to 'Editar', edit_role_path(role) %></td>
+      <td><%= link_to 'Eliminar', role, method: :delete, data: { confirm: '¿Esta seguro?' } %></td>
+    </tr>
+  </tbody>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Role', new_role_path %>
+<%= link_to 'Nuevo rol', new_role_path, class: "btn btn-primary" %>
