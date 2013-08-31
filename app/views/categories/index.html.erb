@@ -1,0 +1,30 @@
+<h1>Listado de categorias</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripci&oacute;n</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+<% @categories.each do |category| %>
+  <tbody>
+    <tr>
+      <td><%= category.name %></td>
+      <td><%= category.description %></td>
+      <td><%= link_to 'Ver', category %></td>
+      <td><%= link_to 'Editar', edit_category_path(category) %></td>
+      <td><%= link_to 'Eliminar', category, method: :delete, data: { confirm: '¿Esta seguro?' } %></td>
+      <td><%= link_to 'Subcategorias', subcategories_path(category), class: "btn btn-mini" %></td>
+    </tr>
+  </tbody>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nueva categoria', new_category_path, class: "btn btn-primary" %>
